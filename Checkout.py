@@ -1,9 +1,16 @@
 class Checkout:
-    def add_item_price(self, item, price):
-        pass
+    price = {}
+    total = 0
 
-    def add_item(self, param):
-        pass
+    def __init__(self):
+        self.price = {}
+        self.total = 0
+
+    def add_item_price(self, item, price):
+        self.price[item] = price
+
+    def add_item(self, item):
+        self.total += self.price[item]
 
     def calculate_total(self):
-        return 1
+        return self.total
